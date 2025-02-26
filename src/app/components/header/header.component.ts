@@ -9,17 +9,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <header class="header">
       <nav class="nav-container">
         <div class="logo">
-          <h1>Portfolio</h1>
+          <img src="../../../assets/imgs/brazil.png" alt="Logo">
         </div>
         <ul class="nav-links">
           <li>
-            <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
+            <a (click)="scrollToSection('about')" class="cursor-pointer">Sobre</a>
           </li>
           <li>
-            <a routerLink="/projetos" routerLinkActive="active">Projetos</a>
+            <a (click)="scrollToSection('projects')" class="cursor-pointer">Projetos</a>
           </li>
           <li>
-            <a routerLink="/contato" routerLinkActive="active">Contato</a>
+            <a (click)="scrollToSection('contact')" class="cursor-pointer">Contato</a>
           </li>
         </ul>
       </nav>
@@ -86,4 +86,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     }
   `]
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+}
