@@ -1,30 +1,49 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 interface Project {
   id: number;
   title: string;
   description: string;
   technologies: string[];
+  imageUrl?: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   template: `
-    <section id="projects" class="py-16 px-4 bg-gray-50">
-      <div class="container mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Projetos</h2>
+    <section id="projects" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div *ngFor="let project of projects" 
-               class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+               class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
             <div class="p-6">
-              <h3 class="text-2xl font-semibold text-gray-800 mb-3">{{project.title}}</h3>
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-gray-900">{{project.title}}</h3>
+                <div class="flex space-x-2">
+                  <a *ngIf="project.githubUrl" href="{{project.githubUrl}}" target="_blank" 
+                     class="text-gray-600 hover:text-gray-900">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                    </svg>
+                  </a>
+                  <a *ngIf="project.liveUrl" href="{{project.liveUrl}}" target="_blank" 
+                     class="text-gray-600 hover:text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <img [src]="project.imageUrl" alt="{{project.title}}" class="w-full h-48 object-cover rounded-t-lg mb-4">
               <p class="text-gray-600 mb-4">{{project.description}}</p>
               <div class="flex flex-wrap gap-2">
                 <span *ngFor="let tech of project.technologies" 
-                      class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
+                      class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                   {{tech}}
                 </span>
               </div>
@@ -35,44 +54,34 @@ interface Project {
     </section>
   `
 })
-
 export class ProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
       title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution",
-      technologies: ["Angular", "Node.js", "MongoDB"]
+      description: "A full-stack e-commerce solution with real-time inventory management and secure payment processing",
+      technologies: ["Angular", "Node.js", "MongoDB"],
+      githubUrl: "https://github.com/username/project1",
+      liveUrl: "https://project1.demo.com",
+      imageUrl: "https://ortogonalprojetos.com.br/wp-content/uploads/2016/01/Program-Management-01.jpg"
     },
     {
       id: 2,
       title: "Task Manager",
-      description: "A productivity application",
-      technologies: ["Angular", "NgRx", "Firebase"]
+      description: "Collaborative task management application with real-time updates and team workflow automation",
+      technologies: ["React", "Express", "PostgreSQL"],
+      githubUrl: "https://github.com/username/project2",
+      liveUrl: "https://project1.demo.com",
+      imageUrl: "https://ortogonalprojetos.com.br/wp-content/uploads/2016/01/Program-Management-01.jpg"
     },
     {
       id: 3,
-      title: "Calculator",
-      description: "A productivity application",
-      technologies: ["REact", "NgRx", "Firebase"]
-    },
-    {
-      id: 1,
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution",
-      technologies: ["Angular", "Node.js", "MongoDB"]
-    },
-    {
-      id: 2,
-      title: "Task Manager",
-      description: "A productivity application",
-      technologies: ["Angular", "NgRx", "Firebase"]
-    },
-    {
-      id: 3,
-      title: "Calculator",
-      description: "A productivity application",
-      technologies: ["REact", "NgRx", "Firebase"]
+      title: "Social Media Dashboard",
+      description: "Analytics dashboard for social media metrics with customizable widgets and data visualization",
+      technologies: ["Vue.js", "Firebase", "TailwindCSS"],
+      githubUrl: "https://github.com/username/project2",
+      liveUrl: "https://project3.demo.com",
+      imageUrl: "https://ortogonalprojetos.com.br/wp-content/uploads/2016/01/Program-Management-01.jpg"
     }
   ];
 }

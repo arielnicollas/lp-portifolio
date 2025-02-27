@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-about',
   standalone: true,
   template: `
-    <section id= "about" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8">
+    <section id= "about" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8 mt-16">
       <div class="max-w-4xl mx-auto w-full">
         <div class="flex flex-col items-center">
           <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl md:text-4xl text-center mb-4">Transformando ideias em código.</h2>
