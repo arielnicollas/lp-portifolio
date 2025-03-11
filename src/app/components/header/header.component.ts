@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <div class="logo">
           <img src="../../../assets/imgs/brazil.png" alt="Logo">
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links font-medium ">
           <li>
             <a (click)="scrollToSection('about')" class="cursor-pointer">Sobre</a>
           </li>

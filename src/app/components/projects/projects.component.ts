@@ -76,7 +76,34 @@ export class ProjectsComponent {
     },
     {
       id: 3,
-      title: "Social Media Dashboard",
+      title: "Media Dashboard",
+      description: "Analytics dashboard for social media metrics with customizable widgets and data visualization",
+      technologies: ["Vue.js", "Firebase", "TailwindCSS"],
+      githubUrl: "https://github.com/username/project2",
+      liveUrl: "https://project3.demo.com",
+      imageUrl: "https://ortogonalprojetos.com.br/wp-content/uploads/2016/01/Program-Management-01.jpg"
+    },
+    {
+      id: 1,
+      title: "E-commerce Platform",
+      description: "A full-stack e-commerce solution with real-time inventory management and secure payment processing",
+      technologies: ["Angular", "Node.js", "MongoDB"],
+      githubUrl: "https://github.com/username/project1",
+      liveUrl: "https://project1.demo.com",
+      imageUrl: "https://ortogonalprojetos.com.br/wp-content/uploads/2016/01/Program-Management-01.jpg"
+    },
+    {
+      id: 2,
+      title: "Task Manager",
+      description: "Collaborative task management application with real-time updates and team workflow automation",
+      technologies: ["React", "Express", "PostgreSQL"],
+      githubUrl: "https://github.com/username/project2",
+      liveUrl: "https://project1.demo.com",
+      imageUrl: "https://ortogonalprojetos.com.br/wp-content/uploads/2016/01/Program-Management-01.jpg"
+    },
+    {
+      id: 3,
+      title: "Media Dashboard",
       description: "Analytics dashboard for social media metrics with customizable widgets and data visualization",
       technologies: ["Vue.js", "Firebase", "TailwindCSS"],
       githubUrl: "https://github.com/username/project2",
