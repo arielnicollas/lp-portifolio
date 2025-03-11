@@ -1,25 +1,36 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LanguageSwitcherComponent } from '../../language-switcher/language-switcher.component';
+import { LanguageSwitcherService } from '../../language-switcher/language-switcher.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, LanguageSwitcherComponent, TranslatePipe],
   template: `
     <header class="header">
       <nav class="nav-container">
-        <div class="logo">
+
+      <div class="logo-container">
+        <div class="logo" (click)="languageSwitcherService.switchLanguage('pt')" style="cursor: pointer">
           <img src="../../../assets/imgs/brazil.png" alt="Logo">
         </div>
+
+        <div class="logo" (click)="languageSwitcherService.switchLanguage('en')" style="cursor: pointer">
+          <img src="../../../assets/imgs/eua.png" alt="Logo">
+        </div>
+      </div>
+      
         <ul class="nav-links font-medium ">
           <li>
-            <a (click)="scrollToSection('about')" class="cursor-pointer">Sobre</a>
+            <a (click)="scrollToSection('about') " class="cursor-pointer">{{'HEADER.ABOUT' | translate}} </a>
           </li>
           <li>
-            <a (click)="scrollToSection('projects')" class="cursor-pointer">Projetos</a>
+            <a (click)="scrollToSection('projects')" class="cursor-pointer">{{'HEADER.PROJECTS' | translate}} </a>
           </li>
           <li>
-            <a (click)="scrollToSection('contact')" class="cursor-pointer">Contato</a>
+            <a (click)="scrollToSection('contact')" class="cursor-pointer">{{'HEADER.CONTACT' | translate}} </a>
           </li>
         </ul>
       </nav>
@@ -49,6 +60,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       font-weight: bold;
       color: #333;
       margin: 0;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
     .nav-links {
@@ -87,6 +104,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   `]
 })
 export class HeaderComponent {
+
+  constructor(
+    public languageSwitcherService: LanguageSwitcherService,
+  ) {}
+  
+
+
+
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {

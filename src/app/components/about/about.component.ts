@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
+  imports: [TranslatePipe],
   template: `
     <section id= "about" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8 mt-16">
       <div class="max-w-4xl mx-auto w-full">
         <div class="flex flex-col items-center">
-          <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl md:text-4xl text-center mb-4">Transformando ideias em código.</h2>
+          <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl md:text-4xl text-center mb-4">{{'ABOUT.TITLE' | translate}}</h2>
           <h3><span class=" text-4xl font-bold text-indigo-600 sm:text-5xl md:text-3xl text-center"> Ariel Nicollas | Software Engineer</span></h3>
           <div class="mt-8 text-xl text-gray-500 leading-8 text-center max-w-3xl">
             <p class="animate-fade-in font-medium">

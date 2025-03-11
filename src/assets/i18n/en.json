@@ -1,0 +1,13 @@
+{
+    "HEADER": {
+      "TITLE": "My Portfolio",
+      "ABOUT": "About",
+      "PROJECTS": "Projects",
+      "CONTACT": "Contact"
+    },
+
+    "ABOUT": {
+      "TITLE": "Turning ideas into code."
+    }
+  }
+  
