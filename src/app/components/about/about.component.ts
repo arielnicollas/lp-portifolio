@@ -72,9 +72,9 @@ import { LanguageSwitcherService } from '../../language-switcher/language-switch
                   <div> 
                     <h4 class="text-lg font-medium text-indigo-700 mb-2">{{'SKILLS.CONTENT-SOFT.COMPETENCIES' | translate}}</h4>
                     <div class="flex flex-wrap gap-2">
-                      <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Trabalho em Equipe</span>
-                      <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Comunicação</span>
-                      <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Resolução de Problemas</span>
+                      <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">{{'SKILLS.CONTENT-SOFT.WORK-TEAM' | translate}}</span>
+                      <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">{{'SKILLS.CONTENT-SOFT.COMMUNICATION' | translate}}</span>
+                      <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">{{'SKILLS.CONTENT-SOFT.PROBLEM-RESOLUTION' | translate}}</span>
                     </div>
                   </div>
 

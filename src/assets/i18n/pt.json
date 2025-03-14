@@ -17,7 +17,20 @@
     "CONTENT-SOFT": {
       "PRATICE": "Excelência em Desenvolvimento",
       "COMPETENCIES": "Competências Interpessoais e Estratégicas",
-      "OTHERS": "Outros"
+      "OTHERS": "Outros",
+      "WORK-TEAM": "Trabalho em Equipe",
+      "COMMUNICATION": "Comunicação",
+      "PROBLEM-RESOLUTION": "Resolução de Problemas"
     }
+  },
+
+
+  "CONTACT": {
+    "TITLE": "Fala Comigo! ",
+    "SUB-TITLE": "Me envie uma mensagem e retornarei em breve.",
+    "NAME": "Nome",
+    "EMAIL": "Email",
+    "MESSAGE": "Mensagem",
+    "SUBMIT": "Enviar"
   }
 }

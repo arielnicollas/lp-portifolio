@@ -17,7 +17,19 @@
     "CONTENT-SOFT": {
       "PRATICE": "Excellence in Development",
       "COMPETENCIES": "Interpersonal and Strategic Competencies",
-      "OTHERS": "Others"
+      "OTHERS": "Others",
+      "WORK-TEAM": "Work in a Team",
+      "COMMUNICATION": "Communication",
+      "PROBLEM-RESOLUTION": "Problem Resolution"
     }
+  },
+
+  "CONTACT": {
+    "TITLE": "Talk with me! ",
+    "SUB-TITLE": "Send me a message and I'll get back to you as soon as possible.",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "MESSAGE": "Message",
+    "SUBMIT": "Send"
   }
 }

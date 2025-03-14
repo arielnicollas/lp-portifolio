@@ -1,24 +1,24 @@
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-
-  imports: [ReactiveFormsModule, NgClass],
+  imports: [ReactiveFormsModule, NgClass, TranslatePipe],
   template: `
     <section id="contact" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-xl w-full">
         <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold text-gray-900">Fala Comigo! 👋</h2>
-          <p class="mt-2 text-lg text-gray-600">Me envie uma mensagem e retornarei em breve.</p>
+          <h2 class="text-3xl font-bold text-gray-900">{{'CONTACT.TITLE' | translate}}👋</h2>
+          <p class="mt-2 text-lg text-gray-600">{{'CONTACT.SUB-TITLE' | translate}}</p>
         </div>
 
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="bg-white rounded-xl shadow-lg p-8">
           <div class="space-y-6">
             <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">{{'CONTACT.NAME' | translate}}</label>
               <input 
                 type="text" 
                 id="name" 
@@ -29,7 +29,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
             </div>
 
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">{{'CONTACT.EMAIL' | translate}}</label>
               <input 
                 type="email" 
                 id="email" 
@@ -40,7 +40,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
             </div>
 
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">{{'CONTACT.MESSAGE' | translate}}</label>
               <textarea 
                 id="message" 
                 formControlName="message"
@@ -55,7 +55,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
               [disabled]="contactForm.invalid"
               class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Enviar Mensagem
+            {{'CONTACT.SUBMIT' | translate}}
             </button>
           </div>
         </form>
