@@ -1,13 +1,23 @@
 {
-    "HEADER": {
-      "TITLE": "My Portfolio",
-      "ABOUT": "About",
-      "PROJECTS": "Projects",
-      "CONTACT": "Contact"
-    },
+  "HEADER": {
+    "TITLE": "My Portfolio",
+    "ABOUT": "About",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
 
-    "ABOUT": {
-      "TITLE": "Turning ideas into code."
+  "ABOUT": {
+    "TITLE": "Turning ideas into code.",
+    "CONTENT": "A passionate developer focused on creating innovative solutions through code. With experience in modern web technologies, I love turning ideas into reality and building easy-to-use apps that make a difference."
+  },
+
+  "SKILLS": {
+    "TITLE-ONE": "Hard Skills",
+    "TITLE-TWO": "Soft Skills & Tools",
+    "CONTENT-SOFT": {
+      "PRATICE": "Excellence in Development",
+      "COMPETENCIES": "Interpersonal and Strategic Competencies",
+      "OTHERS": "Others"
     }
   }
-  
+}

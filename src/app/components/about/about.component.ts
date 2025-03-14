@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { LanguageSwitcherService } from '../../language-switcher/language-switcher.service';
 
 @Component({
   selector: 'app-about',
@@ -13,16 +14,16 @@ import { TranslatePipe } from '@ngx-translate/core';
           <h3><span class=" text-4xl font-bold text-indigo-600 sm:text-5xl md:text-3xl text-center"> Ariel Nicollas | Software Engineer</span></h3>
           <div class="mt-8 text-xl text-gray-500 leading-8 text-center max-w-3xl">
             <p class="animate-fade-in font-medium">
-            Um desenvolvedor apaixonado e focado em criar soluções inovadoras através de código. Com experiência em tecnologias web modernas, adoro transformar ideias em realidade e construir aplicativos fáceis de usar que fazem a diferença.
-            </p>
+            {{'ABOUT.CONTENT' | translate}}
+          </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 w-full">
               <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Competências Técnicas</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">{{'SKILLS.TITLE-ONE' | translate}}</h3>
                 
                 <div class="space-y-6">
                   <div>
-                    <h4 class="text-lg font-medium text-indigo-700 mb-2">Frontend Development</h4>
+                    <h4 class="text-lg font-medium text-indigo-700 mb-2">Frontend</h4>
                     <div class="flex flex-wrap gap-2 text-indigo-700">
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">React</span>
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Angular</span>
@@ -33,7 +34,7 @@ import { TranslatePipe } from '@ngx-translate/core';
                   </div>
 
                   <div>
-                    <h4 class="text-lg font-medium text-indigo-700 mb-2">Backend Development</h4>
+                    <h4 class="text-lg font-medium text-indigo-700 mb-2">Backend</h4>
                     <div class="flex flex-wrap gap-2">
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Node.js</span>
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">NestJS</span>
@@ -56,10 +57,10 @@ import { TranslatePipe } from '@ngx-translate/core';
               </div>
 
               <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Soft Skills & Ferramentas</h3>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">{{'SKILLS.TITLE-TWO' | translate}}</h3>
                 <div class="space-y-6">
                   <div>
-                    <h4 class="text-lg font-medium text-indigo-700 mb-2">Práticas de Desenvolvimento</h4>
+                    <h4 class="text-lg font-medium text-indigo-700 mb-2">{{'SKILLS.CONTENT-SOFT.PRATICE' | translate}}</h4>
                     <div class="flex flex-wrap gap-2">
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Clean Code</span>
                       <span class="px-3 py-1 bg-indigo-100  text-green-700 rounded-full text-sm font-bold">TDD</span>
@@ -69,7 +70,7 @@ import { TranslatePipe } from '@ngx-translate/core';
                   </div>
 
                   <div> 
-                    <h4 class="text-lg font-medium text-indigo-700 mb-2">Habilidades Pessoais</h4>
+                    <h4 class="text-lg font-medium text-indigo-700 mb-2">{{'SKILLS.CONTENT-SOFT.COMPETENCIES' | translate}}</h4>
                     <div class="flex flex-wrap gap-2">
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Trabalho em Equipe</span>
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Comunicação</span>
@@ -78,7 +79,7 @@ import { TranslatePipe } from '@ngx-translate/core';
                   </div>
 
                   <div>
-                    <h4 class="text-lg font-medium text-indigo-700 mb-2">Outros</h4>
+                    <h4 class="text-lg font-medium text-indigo-700 mb-2">{{'SKILLS.CONTENT-SOFT.OTHERS' | translate}}</h4>
                     <div class="flex flex-wrap gap-2">
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Git</span>
                       <span class="px-3 py-1 bg-indigo-100 text-green-700 rounded-full text-sm font-bold">Jira</span>
@@ -95,4 +96,10 @@ import { TranslatePipe } from '@ngx-translate/core';
     </section>
   `
 })
-export class AboutComponent {}
+export class AboutComponent {
+
+   constructor(
+      public languageSwitcherService: LanguageSwitcherService,
+    ) {}
+    
+}

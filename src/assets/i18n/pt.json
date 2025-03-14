@@ -1,13 +1,23 @@
 {
-    "HEADER": {
-      "TITLE": "Meu Portfólio",
-      "ABOUT": "Sobre",
-      "PROJECTS": "Projetos",
-      "CONTACT": "Contato"
-    },
+  "HEADER": {
+    "TITLE": "Meu Portfólio",
+    "ABOUT": "Sobre",
+    "PROJECTS": "Projetos",
+    "CONTACT": "Contato"
+  },
 
-    "ABOUT": {
-      "TITLE": "Transformando ideias em código."
+  "ABOUT": {
+    "TITLE": "Transformando ideias em código.",
+    "CONTENT": "Um desenvolvedor apaixonado e focado em criar soluções inovadoras através de código. Com experiência em tecnologias web modernas, adoro transformar ideias em realidade e construir aplicativos fáceis de usar que fazem a diferença."
+  },
+
+  "SKILLS": {
+    "TITLE-ONE": "Competências Tecnicas",
+    "TITLE-TWO": "Habilidades e Ferramentas",
+    "CONTENT-SOFT": {
+      "PRATICE": "Excelência em Desenvolvimento",
+      "COMPETENCIES": "Competências Interpessoais e Estratégicas",
+      "OTHERS": "Outros"
     }
   }
-  
+}
